@@ -1,12 +1,12 @@
 {
-  "name": "JATE",
+  "name": "pwa-text-editor",
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack --mode production",
     "start": "webpack --watch"
   },
   "author": "2U",
-  "license": "UNLICENSED",
+  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/plugin-transform-runtime": "^7.15.0",
@@ -24,7 +24,6 @@
     "workbox-webpack-plugin": "^6.2.4"
   },
   "dependencies": {
-    "code-mirror-themes": "^1.0.0",
     "idb": "^6.1.2"
   }
 }
