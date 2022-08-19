@@ -11,6 +11,8 @@ module.exports = () => {
     entry: {
       main: "./src/js/index.js",
       install: "./src/js/install.js",
+      editor: "./src/js/editor.js",
+      header: "./src/js/header.js",
     },
     // Output for our bundles
     output: {
@@ -21,8 +23,9 @@ module.exports = () => {
       // Webpack plugin that generates html file + injects our bundles.
       new HtmlWebpackPlugin({
         template: "./index.html",
-        title: "Just Another Text Editor",
+        title: "JATE",
       }),
+      new MiniCssExtractPlugin(),
       // Injects our custom service worker
       new InjectManifest({
         swSrc: "./src-sw.js", //source from
@@ -57,6 +60,10 @@ module.exports = () => {
         {
           test: /\.css$/i,
           use: [MiniCssExtractPlugin.loader, "css-loader"],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: "asset/resource",
         },
         {
           test: /\.m?js$/,
