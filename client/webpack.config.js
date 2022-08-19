@@ -11,8 +11,6 @@ module.exports = () => {
     entry: {
       main: "./src/js/index.js",
       install: "./src/js/install.js",
-      editor: "./src/js/editor.js",
-      header: "./src/js/header.js",
     },
     // Output for our bundles
     output: {
@@ -25,13 +23,12 @@ module.exports = () => {
         template: "./index.html",
         title: "JATE",
       }),
-      new MiniCssExtractPlugin(),
       // Injects our custom service worker
       new InjectManifest({
         swSrc: "./src-sw.js", //source from
         swDest: "src-sw.js", //destination
       }),
-
+      new MiniCssExtractPlugin(),
       // Creates a manifest.json file.
       new WebpackPwaManifest({
         fingerprints: false,
